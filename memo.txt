@@ -1,0 +1,74 @@
+■webpack
+
+複数のファイルをひとつのファイルにまとめてくれる。"モジュールバンドラ"と呼ばれている。ほかにも"Browserfy"とか"RequireJS"などもある。
+
+webpack.config.jsにメインファイル：エントリーファイルを設定して"npm run build"で"require(hoge.js)"もひとつのファイルにまとめる。
+webpack.config.jsになしでも"webpack hoge.js bundle.js"でも可能。
+
+webbackの機能
+
+・watchモード
+"webpack --watch"
+編集しているファイルを監視して、変更があった場合にビルドを実行する機能。
+コミットが発生した場合に、ビルドして、テストを実行みたいなことは可能そう。
+
+・JavaScriptを圧縮する
+"webpack -p"
+or
+"webpack --optimize-minimize"でバンドルされたjsファイルが圧縮される。
+上記のコマンドでも圧縮可能だが、webpack.config.jsに記載する方法もある。
+"UglifyJsPlugin"JavaScriptを圧縮するプラグイン。
+
+※プラグインを利用する場合はローカルディレクトリにもwebpackをインストールする必要がある。
+"npm install webpack --save-dev"
+weppack.config.js上でwebpackを読み込む必要がある。
+
+参考：http://qiita.com/soarflat/items/28bf799f7e0335b68186
+
+参考
+http://qiita.com/yosisa/items/61cfd3ede598e194813b
+http://qiita.com/howdy39/items/cdd5b252096f5a2fa438
+//npmとwebpackでビルド - jQueryからの次のステップ
+
+http://qiita.com/civic/items/82c0184bcadc50965f91
+
+
+■Browserfy
+
+"webpack"と同様に、複数の依存ファイルをひとつにまとめてくれる。
+"browserify js/main.js -0 bundle.js"
+main.jsにrequire関数で別ファイルを読み込み、main.jsファイルをコンパイルしてブラウザ上に実行可能なソースにコンパイルする。
+
+
+
+■ESLint
+JavaScriptの構文チェックツール
+自分で構文チェックルールも記述可能だし、プラグインで構文チェックルールも適用可能。
+Atomのプラグインもあるらしい。
+
+
+Atomの設定方法
+①てきとうなディレクトリを作成する #mkdir atom_eslint2
+②npmの初期化 #npm init
+③eslinのインストール　#npm install eslint
+④eslintの初期化 #eslint --init これでeslintの設定ファイルが作成される
+⑤atomで該当のディレクトリフォルダーを開く
+⑥構文チェック対象のtest.jsを作成すると、チェックしてくれる
+
+■Redux
+ReactJSのフレームワーク。ReactJSはView機能のみだから、それ以外の機能をReduxが提供している。
+
+■create-react-app
+ReactJSの開発環境用モジュール
+①node.jsのインストール
+②環境モジュールインストール　#npm install -g create-react-app
+③てきとうなディレクトリを作成
+④作成したディレクト内でReactアプリを作成 #create-react-app my-react-app
+⑤my-react-app内で# npm start　を実行する
+
+■JSX
+JavaScript XMLの略。JavaScript文法の拡張でXMLライクに記述する。
+ReactではネイティブのJavaScriptでも可能だが、JSXのほうが簡潔に書ける。
+JSXはブラウザで実行できないため、JavaScriptに変換する必要がある。
+JSXTransformer.jsってやつでトランスパイル可能だったが、現在はBabelでトランスパイルすることが主流らしい。
+XMLライクのため”開始タグ”と”終了タグ”の組み合わせで、可読性のあるコードになる。
