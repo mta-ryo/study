@@ -72,3 +72,10 @@ ReactではネイティブのJavaScriptでも可能だが、JSXのほうが簡�
 JSXはブラウザで実行できないため、JavaScriptに変換する必要がある。
 JSXTransformer.jsってやつでトランスパイル可能だったが、現在はBabelでトランスパイルすることが主流らしい。
 XMLライクのため”開始タグ”と”終了タグ”の組み合わせで、可読性のあるコードになる。
+
+
+■Git
+#git remote -v 接続先確認
+#git add index.html
+#git commit index.html 'comment
+#git push index.html
