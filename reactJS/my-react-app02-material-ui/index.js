@@ -7,10 +7,18 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import DatePicker from 'material-ui/DatePicker';
+import Toggle from 'material-ui/Toggle';
 
 
 const style = {
   margin: 3,
+  toggle: {
+      marginBottom: 16,
+  },
+  block: {
+      maxWidth: 250,
+  }
 };
 
 const App =()=>(
@@ -68,9 +76,13 @@ class ProfileComponent extends React.Component{
         return(
             <div>
                     <h2>個人情報</h2>
-                    氏名：<input type="text" value="てすと" onChange={this.handleChange} />
-                    <br />
-                    氏名：<TextField id="name" hintText="your name"/>
+                    <TextField id="name" hintText="your name"　floatingLabelText="氏名"/>
+                    <DatePicker hintText="Landscape Dialog" mode="landscape" floatingLabelText="生年月日"　/>
+                    <TextField id="name" floatingLabelText="メールアドレス"　hintText="your name"/>
+                    <br/>
+                    <div style={style.block}>
+                        <Toggle　label="メール配信希望"　style={style.toggle}/>
+                    </div>
             </div>
         );
     }
