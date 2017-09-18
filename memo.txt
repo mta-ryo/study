@@ -79,3 +79,4 @@ XMLライクのため”開始タグ”と”終了タグ”の組み合わせ�
 #git add index.html
 #git commit index.html 'comment
 #git push index.html
+# git push origin master
